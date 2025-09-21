@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroTech AI - Agência de Inteligência Artificial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .neural-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #dafffb;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #dafffb, transparent);
+            animation: flow 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        @keyframes flow {
+            0% { opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #dafffb, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">NeuroTech AI</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="hover:text-[#dafffb] transition duration-300">Início</a>
+                    <a href="#servicos" class="hover:text-[#dafffb] transition duration-300">Serviços</a>
+                    <a href="#metodologia" class="hover:text-[#dafffb] transition duration-300">Metodologia</a>
+                    <a href="#contato" class="hover:text-[#dafffb] transition duration-300">Contato</a>
+                </div>
+                <button class="md:hidden text-[#dafffb]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="neural-network" id="neuralNetwork"></div>
+        
+        <div class="hero-content container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+                Transforme seu Negócio com IA
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                Desenvolvemos soluções de inteligência artificial personalizadas que revolucionam processos e impulsionam resultados extraordinários.
+            </p>
+            
+            <div class="space-x-4">
+                <button onclick="scrollToSection('contato')" class="bg-[#dafffb] text-black px-8 py-4 rounded-full font-semibold hover:bg-white transition duration-300 transform hover:scale-105">
+                    Começar Agora
+                </button>
+                <button onclick="scrollToSection('servicos')" class="border-2 border-[#dafffb] text-[#dafffb] px-8 py-4 rounded-full font-semibold hover:bg-[#dafffb] hover:text-black transition duration-300">
+                    Nossos Serviços
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Nossos Serviços</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Oferecemos soluções completas de IA para transformar sua empresa
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Automação Inteligente</h3>
+                    <p class="text-gray-300">
+                        Automatize processos complexos com IA avançada, reduzindo custos e aumentando eficiência.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Processamento de documentos</li>
+                        <li>• Atendimento automatizado</li>
+                        <li>• Análise de dados em tempo real</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Machine Learning</h3>
+                    <p class="text-gray-300">
+                        Preveja tendências e tome decisões estratégicas baseadas em dados inteligentes.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Análise preditiva</li>
+                        <li>• Recomendações personalizadas</li>
+                        <li>• Detecção de padrões</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Chatbots Inteligentes</h3>
+                    <p class="text-gray-300">
+                        Assistentes com chatbots que entendem e respondem como humanos.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Atendimento 24/7</li>
+                        <li>• Processamento de linguagem natural</li>
+                        <li>• Integração com sistemas existentes</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                      <svg class="w-10 h-10 text-red-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M15.232 5.232l3.536 3.536M9 11l6.232-6.232a2.121 2.121 0 013 3L12 14l-4 1 1-4z" />
+                      </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Otimização</h3>
+                    <p class="text-gray-300">
+                          Soluções personalizadas para atender às necessidades específicas do seu negócio.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Desenvolvimento sob medida</li>
+                        <li>• Flexibilidade para diferentes setores</li>
+                        <li>• Escalabilidade conforme sua demanda</li>
+                    </ul>
+                </div>
+                <!--
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔍</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Visão Computacional</h3>
+                    <p class="text-gray-300">
+                        Reconhecimento e análise de imagens para automação visual avançada.
+                    </p>
+                </div> 
+                -->
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Consultoria em IA</h3>
+                    <p class="text-gray-300">
+                        Estratégia completa para implementação de IA na sua empresa, desde o planejamento até a execução.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Auditoria de processos</li>
+                        <li>• Roadmap de implementação</li>
+                        <li>• Treinamento de equipes</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-black border border-gray-800 rounded-2xl p-8 hover:border-[#dafffb] transition duration-300">
+                    <div class="w-16 h-16 bg-[#dafffb] bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#dafffb]">Análise de Dados</h3>
+                    <p class="text-gray-300">
+                        Transforme dados brutos em insights valiosos com dashboards inteligentes e relatórios automatizados.
+                    </p>
+                    <br>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Dashboards interativos</li>
+                        <li>• Relatórios automatizados</li>
+                        <li>• Visualização de dados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="metodologia" class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Como Trabalhamos</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Nossa metodologia comprovada garante resultados excepcionais
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="bg-gradient-to-r from-[#dafffb] to-blue-400 rounded-2xl p-8 text-black">
+                        <h3 class="text-2xl font-bold mb-4">Nossa Metodologia</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-black bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-sm font-bold text-white">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Análise e Diagnóstico</h4>
+                                    <p class="text-sm opacity-90">Entendemos seu negócio e identificamos oportunidades</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-black bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-sm font-bold text-white">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Desenvolvimento Personalizado</h4>
+                                    <p class="text-sm opacity-90">Criamos soluções sob medida para suas necessidades</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-6 h-6 bg-black bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-sm font-bold text-white">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Implementação e Suporte</h4>
+                                    <p class="text-sm opacity-90">Garantimos uma transição suave e suporte contínuo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-[#dafffb] to-blue-400 rounded-2xl p-8 text-black">
+                    <h4 class="text-xl font-bold mb-4">Consulta Gratuita</h4>
+                    <p class="mb-4">
+                        Agende uma conversa de 30 minutos para discutir como a IA pode transformar seu negócio.
+                    </p>
+                    <ul class="text-sm space-y-2 opacity-90">
+                        <li>✓ Análise gratuita do seu processo atual</li>
+                        <li>✓ Identificação de oportunidades de IA</li>
+                        <li>✓ Proposta personalizada sem compromisso</li>
+                    </ul>
+                    <button onclick="scrollToSection('contato')" class="mt-6 bg-black text-[#dafffb] px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
+                        Agendar Consulta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Entre em Contato</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Pronto para revolucionar seu negócio? Vamos conversar!
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <form class="bg-black border border-gray-800 rounded-2xl p-8">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-[#dafffb] font-semibold mb-2">Nome</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#dafffb] focus:outline-none transition duration-300" required>
+                        </div>
+                        <div>
+                            <label class="block text-[#dafffb] font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#dafffb] focus:outline-none transition duration-300" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-[#dafffb] font-semibold mb-2">Empresa</label>
+                        <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#dafffb] focus:outline-none transition duration-300">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-[#dafffb] font-semibold mb-2">Mensagem</label>
+                        <textarea rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-[#dafffb] focus:outline-none transition duration-300" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[#dafffb] text-black py-4 rounded-lg font-semibold hover:bg-white transition duration-300 transform hover:scale-105">
+                        Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-3xl font-bold gradient-text mb-4">NeuroTech AI</div>
+                <p class="text-gray-400 mb-6">Transformando o futuro com inteligência artificial</p>
+                <div class="flex justify-center space-x-6">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#1abc9c" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.52 3.48A11.95 11.95 0 0012 0C5.37 0 .01 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.2-1.57A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22c-1.87 0-3.67-.5-5.25-1.44l-.38-.23-3.68.93.98-3.58-.24-.37A9.943 9.943 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.03-7.94c-.27-.14-1.59-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.97.95-.97 2.32s.99 2.69 1.13 2.88c.14.18 1.95 2.99 4.73 4.19.66.28 1.17.45 1.57.58.66.22 1.26.19 1.73.11.53-.09 1.59-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.27-.18-.55-.32z"/>
+                  </svg>
+                    <a href="#" class="text-gray-400 hover:text-[#dafffb] transition duration-300">What's App</a>
+                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.427.403a4.92 4.92 0 011.7 1.1 4.92 4.92 0 011.1 1.7c.163.456.347 1.257.403 2.427.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.403 2.427a4.92 4.92 0 01-1.1 1.7 4.92 4.92 0 01-1.7 1.1c-.456.163-1.257.347-2.427.403-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.427-.403a4.902 4.902 0 01-1.7-1.1 4.902 4.902 0 01-1.1-1.7c-.163-.456-.347-1.257-.403-2.427C2.175 15.747 2.163 15.368 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.403-2.427a4.902 4.902 0 011.1-1.7 4.902 4.902 0 011.7-1.1c.456-.163 1.257-.347 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.737 0 8.332.013 7.052.072 5.777.131 4.662.337 3.758.662a7.02 7.02 0 00-2.56 1.66A7.02 7.02 0 00.662 4.88c-.325.904-.531 2.019-.59 3.294C.013 8.332 0 8.737 0 12c0 3.263.013 3.668.072 4.948.059 1.275.265 2.39.59 3.294a7.02 7.02 0 001.536 2.56 7.02 7.02 0 002.56 1.536c.904.325 2.019.531 3.294.59C8.332 23.987 8.737 24 12 24s3.668-.013 4.948-.072c1.275-.059 2.39-.265 3.294-.59a7.02 7.02 0 002.56-1.536 7.02 7.02 0 001.536-2.56c.325-.904.531-2.019.59-3.294.059-1.28.072-1.685.072-4.948s-.013-3.668-.072-4.948c-.059-1.275-.265-2.39-.59-3.294a7.02 7.02 0 00-1.536-2.56 7.02 7.02 0 00-2.56-1.536c-.904-.325-2.019-.531-3.294-.59C15.668.013 15.263 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+                  </svg>
+
+                    
+                    <a href="#" class="text-gray-400 hover:text-[#dafffb] transition duration-300">Instagram</a>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-800 text-gray-500">
+                    <p>&copy; 2024 NeuroTech AI. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Neural Network Animation
+        function createNeuralNetwork() {
+            const container = document.getElementById('neuralNetwork');
+            const nodes = [];
+            const connections = [];
+            
+            // Create nodes
+            for (let i = 0; i < 20; i++) {
+                const node = document.createElement('div');
+                node.className = 'node';
+                node.style.left = Math.random() * 100 + '%';
+                node.style.top = Math.random() * 100 + '%';
+                node.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(node);
+                nodes.push(node);
+            }
+            
+            // Create connections
+            for (let i = 0; i < 15; i++) {
+                const connection = document.createElement('div');
+                connection.className = 'connection';
+                
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
+                const endX = Math.random() * 100;
+                const endY = Math.random() * 100;
+                
+                const length = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+                const angle = Math.atan2(endY - startY, endX - startX) * 180 / Math.PI;
+                
+                connection.style.left = startX + '%';
+                connection.style.top = startY + '%';
+                connection.style.width = length + '%';
+                connection.style.transform = `rotate(${angle}deg)`;
+                connection.style.animationDelay = Math.random() * 3 + 's';
+                
+                container.appendChild(connection);
+            }
+        }
+        
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        // Initialize neural network
+        createNeuralNetwork();
+        
+        // Parallax effect for neural network
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.getElementById('neuralNetwork');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translateY(${speed}px)`;
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9824f362b1ce5415',t:'MTc1ODQwOTM0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
